@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import Image from '../../../components/Image/Image';
 import './SinglePost.css';
 
+import {API_PATH} from '../../../config'
+
+
 class SinglePost extends Component {
   state = {
     title: '',
@@ -14,7 +17,7 @@ class SinglePost extends Component {
 
   componentDidMount() {
     const postId = this.props.match.params.postId;
-    fetch('http://localhost:8080/feed/post/' + postId, {
+    fetch(API_PATH+'/feed/post/' + postId, {
       headers: {
         Authorization: 'Bearer ' + this.props.token
       }
@@ -29,7 +32,7 @@ class SinglePost extends Component {
         this.setState({
           title: resData.post.title,
           author: resData.post.creator.name,
-          image: 'http://localhost:8080/' + resData.post.imageUrl,
+          image: API_PATH+'/' + resData.post.imageUrl,
           date: new Date(resData.post.createdAt).toLocaleDateString('en-US'),
           content: resData.post.content
         });

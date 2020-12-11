@@ -13,6 +13,8 @@ import LoginPage from './pages/Auth/Login';
 import SignupPage from './pages/Auth/Signup';
 import './App.css';
 
+import {API_PATH} from './config'
+
 class App extends Component {
   state = {
     showBackdrop: false,
@@ -59,7 +61,7 @@ class App extends Component {
   loginHandler = (event, authData) => {
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch('http://localhost:8080/auth/login', {
+    fetch(API_PATH+'/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -109,7 +111,7 @@ class App extends Component {
   signupHandler = (event, authData) => {
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch('http://localhost:8080/auth/signup', {
+    fetch(API_PATH+'/auth/signup', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
