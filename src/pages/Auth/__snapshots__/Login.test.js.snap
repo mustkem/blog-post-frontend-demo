@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<auth>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      control="input"
+      id="email"
+      label="Your E-Mail"
+      onBlur={[Function]}
+      onChange={[Function]}
+      touched={false}
+      type="email"
+      valid={false}
+      value=""
+    />
+    <input
+      control="input"
+      id="password"
+      label="Password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      touched={false}
+      type="password"
+      valid={false}
+      value=""
+    />
+    <button
+      design="raised"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</auth>
+`;
