@@ -15,6 +15,10 @@ import './App.css';
 
 import {API_PATH} from './config'
 
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
+
 class App extends Component {
   state = {
     showBackdrop: false,
